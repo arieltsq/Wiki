@@ -10,18 +10,18 @@ class SnoopyController < ApplicationController
 
   def characters
     @characters = params[:id]
-    
+
     # @title = ["Bestfriend: Wood Stock", "Bestfriend: Linus"]
     if @characters == "charlie"
 
       # render "characters"
-      @current_title = "Bestfriend: Wood Stock"
-      @current_image = "snoopy.jpg"
+      @current_title = "Bestfriend: Snoopy"
+      @current_image = "charlie.png"
 
-    elsif @characters == "sue"
+    elsif @characters == "sally"
       # render "characters2"
-        @current_title = "Bestfriend: Linus"
-        @current_image = "sue.jpg"
+        @current_title = "Charlie Brown Sister"
+        @current_image = "sally.png"
 
     else
       render "index"

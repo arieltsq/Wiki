@@ -3,12 +3,22 @@
   <head>
     <title>The Snoopy Tribute</title>
     <%= csrf_meta_tags %>
+
     <!-- Latest compiled and minified CSS -->
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 <link rel="icon" type="image/png" href="icon.png" />
+<style>
+@import 'https://fonts.googleapis.com/css?family=Abril+Fatface';
+
+     body {
+    font-family: 'Abril Fatface', cursive;
+
+     }
+</style>
   </head>
 
   <body>
@@ -18,7 +28,7 @@
 <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
     <div class="container-fluid">
         <div class="navbar-header"><a class="navbar-brand" href="#">
-          <img src="brand.png">
+        <%= image_tag "brand.png" %>
         </a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
             </button>
@@ -27,7 +37,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="/">Home</a>
                 </li>
-                <li><a href="/about">About Us</a>
+                <li><a href="/about">Founder</a>
                 </li>
                 <li role="presentation" class="dropdown">
                   <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
@@ -36,24 +46,27 @@
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                       <li><%= link_to 'Charlie Brown', snoopy_path(id: "charlie") %></li>
 
+                      <li><%= link_to 'Sally Brown', snoopy_path(id: "sally")%></li>
                       <li><%= link_to 'Sue', snoopy_path(id: "sue")%></li>
 
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">All characters</a></li>
+                    <li>
+                      <li><%= link_to 'All Characters', characters_path %></li>
+                    </li>
                   </ul>
                 </li>
             </ul>
         </div>
     </div>
 </div>
-    <!-- <ul>
-      <li class="btn btn-success"><%= link_to 'Charlie Brown', snoopy_path(id: "charlie") %></li>
-
-      <li class="btn btn-default"><%= link_to 'Sue', snoopy_path(id: "sue")%></li>
-
-    </ul> -->
+<!-- this is where all the content go  -->
     <div class="container">
     <%= yield %>
   </div>
+  <footer class="navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <!-- <span>Winning!</span> -->
+    </div>
+  </footer>
   </body>
 </html>

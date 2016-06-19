@@ -21,14 +21,20 @@
     -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
+  
  }
+ .img_t{
+  width: 100px;
+  height: 100px;
+}
+
 
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
 
   #custom-bootstrap-menu.navbar-default .navbar-brand, #dropdown-toggle  {
-     color: rgba(255, 255, 255, 1);
+     color: rgba(50, 48, 48, 1);
  }
  #custom-bootstrap-menu.navbar-default, #dropdown-toggle  {
      font-size: #ffffffpx;
@@ -37,7 +43,7 @@
      border-radius: #ffffffpx;
  }
  #custom-bootstrap-menu.navbar-default .navbar-nav>li>a, #dropdown-toggle {
-     color: rgba(255, 255, 255, 1);
+    color: rgba(50, 48, 48, 1);
      background-color: rgba(248, 248, 248, 0);
  }
  #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
@@ -67,10 +73,4 @@
  #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
  #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar, #dropdown-toggle  {
      background-color: #000000;
- }
-
-
-  img{
-   width: 100%;
-   height: auto;
  }

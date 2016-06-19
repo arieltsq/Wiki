@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root'snoopy#index'
   get '/index', to: "snoopy#index" #how edit the url to look like it's from /legal
   get '/about', to: "static#about"
+  get '/characters', to: "snoopy#show"
     get '/snoopy/:id', to: "snoopy#characters", as: "snoopy"
       # get '/snoopy/2', to: "snoopy#characters2"
   # get '/characters', to: "static#characters"
