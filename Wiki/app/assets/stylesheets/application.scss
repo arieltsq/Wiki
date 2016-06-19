@@ -1,0 +1,76 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// if you want to change anything in bootstrap, use it before the @import
+ /*// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"*/
+ body{
+ background-image: url("/bkg.jpg");
+    background-size: cover;
+    -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+ }
+
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+
+
+  #custom-bootstrap-menu.navbar-default .navbar-brand, #dropdown-toggle  {
+     color: rgba(255, 255, 255, 1);
+ }
+ #custom-bootstrap-menu.navbar-default, #dropdown-toggle  {
+     font-size: #ffffffpx;
+     background-color: rgba(255, 255, 255, 0.73);
+     border-width: #e0be61px;
+     border-radius: #ffffffpx;
+ }
+ #custom-bootstrap-menu.navbar-default .navbar-nav>li>a, #dropdown-toggle {
+     color: rgba(255, 255, 255, 1);
+     background-color: rgba(248, 248, 248, 0);
+ }
+ #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+ #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus,
+ #dropdown-toggle {
+     color: rgba(255, 255, 255, 1);
+     background-color: rgba(46, 46, 43, 0.75);
+ }
+ #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+ #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+ #custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus,
+ #dropdown-toggle  {
+     color: rgba(255, 255, 255, 1);
+     background-color: rgba(255, 255, 255, 1);
+ }
+ #custom-bootstrap-menu.navbar-default .navbar-toggle {
+     border-color: #ffffff;
+ }
+ #custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+ #custom-bootstrap-menu.navbar-default .navbar-toggle:focus,
+ #dropdown-toggle  {
+     background-color: #ffffff;
+ }
+ #custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar, #dropdown-toggle  {
+     background-color: #ffffff;
+ }
+ #custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+ #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar, #dropdown-toggle  {
+     background-color: #000000;
+ }
+
+
+  img{
+   width: 100%;
+   height: auto;
+ }
