@@ -1,2 +1,26 @@
-<h1>FAQ Page</h1>
-<p>Find me in app/views/static/faq.html.erb</p>
+
+<div class="panel-heading panel-heading-custom" style="background-color:#fbb41a">
+  <div class="row">
+  <div class="col-md-4"><h1>FAQ Page</h1></div>
+  <div class="col-md-4 col-md-offset-4"><%= image_tag "FAQ.png"%> </div>
+</div>
+</div>
+<div class="well">
+<ul class="list-group">
+  <li class="list-group-item"><%= link_to 'Does Snoopy have any siblings? If so, what are their names?', faq_path(q: 0),:class=>"words" %></li>
+  <!-- <li><%= link_to 'Question 1', faq_path(q: 0) %></li> -->
+
+<li class="list-group-item"><%= link_to 'Who draws the PEANUTS strip today?', faq_path(q: 1),:class=>"words" %></li>
+
+<li class="list-group-item"><%= link_to 'Does Charlie Brown have a girlfriend?', faq_path(q: 2),:class=>"words"%></li>
+
+</ul>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Answer:</h3>
+  </div>
+  <div class="panel-body">
+  <%=   @current_question %>
+  </div>
+</div>
+</div>
