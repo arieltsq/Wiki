@@ -1,0 +1,59 @@
+<h1> Creating a new PEANUT Character </h1>
+<div class="well">
+
+<%= notice %>
+<%= form_for(@snoopy) do |f| %>
+  <% if @snoopy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@snoopy.errors.count, "error") %> prohibited this @character from being saved:</h2>
+
+      <ul>
+      <% @snoopy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<form class="form-horizontal">
+ <div class="form-group">
+  <div class="field">
+    <%= f.label :char_name, "Name:" , class: "col-sm-2 control-label" %>
+
+    <%= f.text_field :char_name , class:"form-control"%>
+
+  </div>
+</div>
+ <div class="form-group">
+  <div class="field">
+    <%= f.label :char_found, "First Appearance:", class: "col-sm-2 control-label" %>
+
+    <%= f.text_area :char_found, class:"form-control" %>
+
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :char_image, "Character Image:" , class: "col-sm-2 control-label"  %>
+
+    <%= f.text_field :char_image, class:"form-control" %>
+
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :char_desc , "Description:" , class: "col-sm-2 control-label" %>
+    <%= f.text_area :char_desc,  class: "create_input form-control" %>
+  </div>
+</div>
+<div class="form-group">
+  <div class="field">
+    <%= f.label :char_dyknow , "Did you know:" , class: "col-sm-2 control-label" %>
+    <%= f.text_area :char_dyknow,  class: "create_input form-control" %>
+  </div>
+</div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>
+</div>

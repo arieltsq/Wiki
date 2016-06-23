@@ -3,13 +3,15 @@ Rails.application.routes.draw do
 
    #where the page will lead to when there's nothing to do
 
-  root'snoopy#index'
-  get '/index', to: "snoopy#index" #how edit the url to look like it's from /legal
+  root'snoopies#index'
+  get '/index', to: "snoopies#index" #how edit the url to look like it's from /legal
   get '/about', to: "static#about"
   get '/faq', to: "static#faq"
-
-  get '/characters', to: "snoopy#show"
-    get '/snoopy/:id', to: "snoopy#characters", as: "snoopy"
+  #
+  # # get '/characters', to: "snoopy#show"
+  #   get '/snoopy/:id', to: "snoopy#characters", as: "snoopy"
+    # get'/new', to: "snoopy#new"
+    resources :snoopies
       # get '/snoopy/2', to: "snoopy#characters2"
   # get '/characters', to: "static#characters"
   # get 'static/about'

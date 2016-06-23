@@ -1,0 +1,39 @@
+
+ <h1> ALL THE SNOOPY CHARACTERS </h1>
+<div class="well">
+ <p id="notice"><%= notice %></p>
+
+<table class="table table-striped">
+   <thead>
+     <tr>
+       <th>Name</th>
+       <th>First Appearance</th>
+<th>Images</th>
+       <th colspan="4"></th>
+     </tr>
+   </thead>
+
+   <tbody>
+     <% @snoopies.each do |snoopy| %>
+       <tr>
+         <td><%= snoopy.char_name %></td>
+         <td><%= snoopy.char_found %></td>
+         <td><%= image_tag (snoopy.char_image)%>
+         <td><%= link_to 'Show', snoopy %></td>
+
+         <td><%= link_to 'Edit', edit_snoopy_path(snoopy) %></td>
+         <td><%= link_to 'Destroy', snoopy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+     <% end %>
+   </tbody>
+ </table>
+
+ <br>
+
+ <%= link_to 'New Character', new_snoopy_path %>
+</div>
+<!--
+        <%= image_tag "family.jpg", :style => "height:100%; width:100%; margin-bottom:100px;" %> -->
+
+
+<!-- <%= image_tag "snoopy.jpg", id: "Snoopyheader"%> -->
