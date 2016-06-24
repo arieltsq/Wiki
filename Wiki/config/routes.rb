@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :photo_galleries
    #where the page will lead to when there's nothing to do
 
   root'snoopies#index'

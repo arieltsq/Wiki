@@ -34,14 +34,22 @@
   width: 100px;
   height: 100px;
 }
-p{
-  text-align: center;
-}
 
   @import "bootstrap-sprockets";
   @import "bootstrap";
 
-
+.centralized
+{
+  text-align: center;
+}
+span{
+  font-size: 1.15em;
+  text-align: center;
+    color:rgb(189, 144, 49);
+}
+h4{
+  color:rgb(149, 113, 36);
+}
 
   #custom-bootstrap-menu.navbar-default .navbar-brand, #dropdown-toggle  {
      color: rgba(50, 48, 48, 1);

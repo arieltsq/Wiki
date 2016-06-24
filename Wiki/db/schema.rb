@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160622141412) do
+ActiveRecord::Schema.define(version: 20160623163443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "photo_galleries", force: :cascade do |t|
+    t.integer  "snoopies_id"
+    t.string   "image_name"
+    t.string   "image_url"
+    t.string   "image_desc"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["snoopies_id"], name: "index_photo_galleries_on_snoopies_id", using: :btree
+  end
 
   create_table "snoopies", force: :cascade do |t|
     t.string   "char_name"
@@ -26,4 +36,5 @@ ActiveRecord::Schema.define(version: 20160622141412) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "photo_galleries", "snoopies", column: "snoopies_id"
 end

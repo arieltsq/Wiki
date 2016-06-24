@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  snoopies: 
+  image_name: MyString
+  image_url: MyString
+  image_desc: MyString
+
+two:
+  snoopies: 
+  image_name: MyString
+  image_url: MyString
+  image_desc: MyString

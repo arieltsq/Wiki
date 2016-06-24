@@ -1,49 +1,4 @@
-<!-- <h1>All Characters</h1>
 
-<div class="row">
-<div class="col-sm-6 col-md-4">
-<div class="thumbnail">
-<%= image_tag "snoopy.png", :class=>"img_t" %>
-<div class="caption" style="text-align:center">
-<h3>Snoopy</h3>
-<p>FIRST APPEARANCE: October 4, 1950</p>
-<p class="btn btn-default" role="button"> <%= link_to 'Read More', snoopy_path(id: "snoopy") ,{:style=>'color:black;  text-decoration: none;'}%></p>
-</div>
-</div>
-</div>
-<div class="col-sm-6 col-md-4">
-<div class="thumbnail img-circle">
-<%= image_tag "charlie.png", :class=>"img_t" %>
-<div class="caption" style="text-align:center">
-<h3>Charlie Brown</h3>
-<p>FIRST APPEARANCE: October 2, 1950</p>
-<p class="btn btn-default" role="button"> <%= link_to 'Read More', snoopy_path(id: "charlie") ,{:style=>'color:black;  text-decoration: none;'}%></p>
-</div>
-</div>
-</div>
-
-<div class="col-sm-6 col-md-4">
-<div class="thumbnail">
-<%= image_tag "sally.png", :class=>"img_t" %>
-<div class="caption" style="text-align:center">
-<h3>Sally Brown</h3>
-<p>FIRST APPEARANCE: August 23, 1959</p>
-<p class="btn btn-default" role="button"> <%= link_to 'Read More', snoopy_path(id: "sally") ,{:style=>'color:black;  text-decoration: none;'}%></p>
-</div>
-</div>
-</div>
-<div class="col-sm-6 col-md-4">
-<div class="thumbnail">
-<%= image_tag "woodstock.png", :class=>"img_t" %>
-<div class="caption" style="text-align:center">
-<h3>Woodstock</h3>
-<p>FIRST APPEARANCE: April 4, 1967</p>
-<p class="btn btn-default" role="button"> <%= link_to 'Read More', snoopy_path(id: "woodstock") ,{:style=>'color:black;  text-decoration: none;'}%></p>
-</div>
-</div>
-</div>
-
-</div> -->
 
 <div class="panel panel-default">
   <div class="panel-heading panel-heading-custom" style="background-color:#fbb41a">
@@ -54,10 +9,17 @@
   <div class="panel-body" style="background-color:rgba(238, 171, 26, 0.2)">
     <%= image_tag (@snoopy.char_image) , :class=>"img-responsive center-block"%>
     <br>
-    <p> <%= @snoopy.char_found %></p>
+    <div class="centralized">
+    <span>Character first appearance was on:  <%= @snoopy.char_found %> </span>
+  </div>
+    <br>
+    <h4> Description on character:</h4>
     <p> <%= @snoopy.char_desc %></p>
+    <h4> Did you know:</h4>
     <p> <%= @snoopy.char_dyknow %></p>
-  <p>  <%= link_to 'Edit', edit_snoopy_path(@snoopy),  class:"btn btn-default" %></p>
+    <div class="centralized">
+  <%= link_to 'Edit', edit_snoopy_path(@snoopy),  class:"btn btn-default" %>
 
   </div>
+</div>
 </div>
