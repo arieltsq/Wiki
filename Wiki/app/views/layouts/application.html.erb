@@ -1,76 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>The Snoopy Tribute</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>The Snoopy Tribute</title>
+  <%= csrf_meta_tags %>
 
-    <!-- Latest compiled and minified CSS -->
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-<link rel="icon" type="image/png" href="icon.png" />
-<style>
-@import 'https://fonts.googleapis.com/css?family=Abril+Fatface';
+  <link rel="icon" type="image/png" href="icon.png" />
+  <style>
+  @import 'https://fonts.googleapis.com/css?family=Abril+Fatface';
 
-     body {
+  body {
     font-family: 'Abril Fatface', cursive;
 
-     }
-</style>
-  </head>
+  }
+  li{
+    font-family: 'Abril Fatface', cursive;
 
-  <body>
+  }
+  </style>
+</head>
+
+<body>
 
 
 
-<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+  <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
     <div class="container-fluid">
-        <div class="navbar-header"><a class="navbar-brand" href="/">
+      <div class="navbar-header"><a class="navbar-brand" href="/">
         <%= image_tag "brand.png" %>
-        </a>
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse navbar-menubuilder">
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="/">Home</a>
-                </li>
-                <li><a href="/about">Founder</a>
-                </li>
-                <li role="presentation" class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    Characters <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <!-- <li><%= link_to 'Snoopy', snoopy_path(id: "snoopy")%></li>
-
-                      <li><%= link_to 'Charlie Brown', snoopy_path(id: "charlie") %></li>
-
-                      <li><%= link_to 'Sally Brown', snoopy_path(id: "sally")%></li>
-                      <li><%= link_to 'Woodstock', snoopy_path(id: "woodstock")%></li> -->
-                    
-                    <li role="separator" class="divider"></li>
-                    <li>
-                      <li><%= link_to 'All Characters', snoopies_path %></li>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href="/faq">FAQ</a>
-                  <li><a href="/snoopies/new">Create</a>
-            </ul>
-        </div>
+      </a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
     </div>
-</div>
-<!-- this is where all the content go  -->
-    <div class="container">
-    <%= yield %>
-  </div>
-  <footer class="navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-      <!-- <span>Winning!</span> -->
-    </div>
-  </footer>
-  </body>
-</html>
+    <div class="collapse navbar-collapse navbar-menubuilder">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="/">Home</a>
+        </li>
+        <li><a href="/about">Founder</a>
+        </li>
+        <li role="presentation" class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            Characters <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+
+             <% @snoopies.each do |snoopy| %>
+                           <!-- <li><%= link_to snoopy.char_name, snoopies_path(id: snoopy.char_name) %></li> -->
+                           <li><%= link_to snoopy.char_name,"/snoopies/#{snoopy.char_name}"  %></li>
+
+
+                         <% end %>
+
+
+
+            <li role="separator" class="divider"></li>
+            <li>
+                <li><a href="/snoopies/new">Create</a></li>
+              <li><%= link_to 'All Characters', snoopies_path %></li>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/faq">FAQ</a></li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li><button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button></li> -->
+
+            <% if user_logged_in? %>
+            <%= current_user.email%>
+            <%= link_to "Log out", logout_path, method: :delete, class:"btn btn-default navbar-btn" %>
+            <% else %>
+            <%= link_to "Login", login_path ,  class:"btn btn-default navbar-btn"%>
+            <% end %>
+
+
+
+            <ul>
+            </div>
+          </div>
+        </div>
+        <!-- this is where all the content go  -->
+        <div class="container">
+
+          <%= yield %>
+        </div>
+        <footer class="navbar-default navbar-fixed-bottom">
+          <div class="container-fluid">
+            <!-- <span>Winning!</span> -->
+          </div>
+        </footer>
+      </body>
+      </html>

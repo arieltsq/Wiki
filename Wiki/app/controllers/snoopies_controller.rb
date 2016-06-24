@@ -1,6 +1,6 @@
 class SnoopiesController < ApplicationController
-
-
+  before_action :authenticate_user, only: [:new,:edit, :destroy]
+  before_action :show_all
   def new
     @snoopy = Snoopy.new
   end
@@ -55,4 +55,5 @@ end
 @snoopies = Snoopy.order('snoopies.char_name ASC').all
 
   end
+
 end

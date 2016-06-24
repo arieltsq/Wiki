@@ -1,0 +1,42 @@
+<!-- <p id="notice"><%= notice %></p>
+
+<div class="panel panel-default">
+  <div class="panel-heading panel-heading-custom" style="background-color:#fbb41a">
+    <!-- <h3 class="panel-title"><h1 style="text-transform: uppercase"><%= @characters%></h1></h3> -->
+    <!-- <h3 class="panel-title"><h1 style="text-transform: uppercase">All Users</h1></h3>
+
+
+</div>
+<div class="well">
+<table class="table table-striped">
+
+  <thead>
+
+
+    <tr>
+      <th>Email</th>
+      <th>Password digest</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.password_digest %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h4><%= link_to 'New User', new_user_path %></h4>
+</div>
+</div>
+<br> -->
+
+<h1> The Snoopy Family Tree </h1>
+
+       <%= image_tag "family.jpg", :style => "height:100%; width:100%; margin-bottom:100px;" %>

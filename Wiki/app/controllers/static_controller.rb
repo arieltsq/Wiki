@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-
+before_action :show_all
   def about
     @page = params[:page]
   end

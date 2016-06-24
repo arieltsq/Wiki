@@ -1,6 +1,6 @@
 class PhotoGalleriesController < ApplicationController
   before_action :set_photo_gallery, only: [:show, :edit, :update, :destroy]
-
+before_action :show_all
   # GET /photo_galleries
   # GET /photo_galleries.json
   def index

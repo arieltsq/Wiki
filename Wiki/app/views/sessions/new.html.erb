@@ -1,0 +1,20 @@
+<div class="well">
+<h1>Login</h1>
+
+<!-- #the form tag will generate the form out
+# willl the form object we need to manually specific it out
+form tag does not nest it as compared to from_for (which know its taking in a user object) -->
+<%= form_tag sessions_path do %>
+<div class = "field">
+<p><h4><%= label_tag :email %></h4>
+<%= text_field_tag :email %></p>
+</div>
+<div class = "field">
+<h4><%= label_tag :password %></h4>
+<%= password_field_tag :password %>
+</div>
+<div class = "actions">
+<%= submit_tag "Login" %>
+</div>
+<% end %>
+</div>
